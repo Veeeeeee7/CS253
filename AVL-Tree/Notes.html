@@ -1,0 +1,81 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional //EN">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.4 GITHUB_CHECKBOX">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+</head>
+<body>
+<h1>Assignment &ldquo;code2&rdquo;</h1>
+
+<p><strong>Summary:</strong> For this homework you finish implementing an AVLTree
+class.  AVLTree extends BST, which is a simple binary search tree
+(just a set of keys, not a symbol table).  When you are done, you
+submit your AVLTree.java file on Canvas.</p>
+
+<h2>Preparation</h2>
+
+<p>Read both <a href="BST.java">BST.java</a> and <a href="AVLTree.java">AVLTree.java</a>.  You
+will not edit BST.java; you only edit AVLTree.java.  The comments in
+AVLTree.java describe what you need to do.  In particular, you really
+only need to override the <em>fixup</em> method. It should do &ldquo;trinode
+restructuring&rdquo; when needed, as described in the
+<a href="https://cs.emory.edu/~cs253002/share/0915/AVLTrees.pdf">AVLTrees.pdf</a>
+slides.  <em>fixup</em> is already being called where needed in the BST
+<em>insert</em> and <em>remove</em> methods, so you do not need to override those.</p>
+
+<p>Note the Node class (defined inside BST.java) does not have a parent link.
+Each Node stores just a Key, no value. Each Node has a
+size field and a height field.  The size field supports t.get(rank),
+t.rank(k), and the iterator.</p>
+
+<p>The BST class also defines a fail-fast iterator (class RankIterator),
+but you do not need to modify that.</p>
+
+<h2>Testing</h2>
+
+<p>There are two testing programs, <a href="Demo.java">Demo.java</a> and
+<a href="Tests.java">Tests.java</a>.  You may use the Demo program to run small
+interactive tests:</p>
+
+<pre><code>  javac *.java
+  java Demo
+</code></pre>
+
+<p>The above usage expects you to enter some integers with the keyboard.
+You may instead read prepared input from a file.  We have two files
+prepared, <a href="demo1.txt">demo1.txt</a> and <a href="demo2.txt">demo2.txt</a>.  You can
+make &ldquo;Demo&rdquo; read from these files in either of these ways:</p>
+
+<pre><code>  java Demo demo1.txt
+  java Demo demo2.txt
+</code></pre>
+
+<p>or</p>
+
+<pre><code>  java Demo &lt; demo1.txt
+  java Demo &lt; demo2.txt
+</code></pre>
+
+<p>Note that if you look inside <a href="demo1.txt">demo1.txt</a> and
+<a href="demo2.txt">demo2.txt</a>, the expected output for each is documented.</p>
+
+<p>Use the Tests program to run some more extensive non-interactive
+tests.  First it does some small test cases, followed by a timing test
+(comparing the speed of your AVLTree with java.util.TreeSet, which is
+a red-black tree):</p>
+
+<pre><code>  javac *.java
+  java Tests
+</code></pre>
+
+<p>It reports a timing ratio, a ratio below 2.0 is good enough.</p>
+
+<h2>Submission</h2>
+
+<p>When you are done, or just ready to quit, submit your AVLTree.java
+on Canvas.  Check that page for any further requirements or extra
+credit.  Please add a &ldquo;comment&rdquo; to your Canvas submission, if any
+issues remain.</p>
+</body>
+</html>
